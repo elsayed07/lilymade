@@ -1,0 +1,99 @@
+{
+  "brand": "Lilymade",
+  "tagline": "Handcrafted crochet bags",
+  "nav": {
+    "home": "Home",
+    "shop": "Shop",
+    "about": "About",
+    "contact": "Contact",
+    "account": "Account",
+    "cart": "Cart"
+  },
+  "common": {
+    "loading": "Loading…",
+    "error": "Something went wrong.",
+    "from": "From",
+    "addToCart": "Add to cart",
+    "soldOut": "Sold out",
+    "outOfStock": "Out of stock",
+    "inStock": "In stock",
+    "free": "Free",
+    "viewAll": "View all",
+    "search": "Search",
+    "language": "Language",
+    "currency": "Currency"
+  },
+  "home": {
+    "heroTitle": "Crochet bags, made by hand",
+    "heroSubtitle": "Bold, tactile, one-of-a-kind pieces — crocheted with courage and delight.",
+    "shopNow": "Shop the collection",
+    "featured": "Limited edition",
+    "shopByCollection": "Shop by collection",
+    "story": "Every Lilymade piece is crocheted by hand in Italy. No two are exactly alike."
+  },
+  "shop": {
+    "title": "Shop all",
+    "empty": "No products found.",
+    "searchPlaceholder": "Search bags…"
+  },
+  "product": {
+    "selectOption": "Choose an option",
+    "description": "Description",
+    "added": "Added to cart"
+  },
+  "cart": {
+    "title": "Your cart",
+    "empty": "Your cart is empty.",
+    "emptyCta": "Continue shopping",
+    "subtotal": "Subtotal",
+    "shippingNote": "Shipping calculated at checkout. Free over €100.",
+    "checkout": "Checkout",
+    "remove": "Remove",
+    "quantity": "Qty"
+  },
+  "account": {
+    "title": "Account",
+    "signIn": "Sign in",
+    "createAccount": "Create account",
+    "email": "Email",
+    "password": "Password",
+    "fullName": "Full name",
+    "logout": "Log out",
+    "myOrders": "My orders",
+    "noOrders": "You have no orders yet.",
+    "haveAccount": "Already have an account? Sign in",
+    "needAccount": "Need an account? Register",
+    "welcome": "Welcome, {{name}}",
+    "orderNumber": "Order #{{id}}",
+    "status": "Status"
+  },
+  "order": {
+    "successTitle": "Thank you for your order!",
+    "successMsg": "Your payment was successful. A confirmation has been sent to your email.",
+    "cancelTitle": "Checkout cancelled",
+    "cancelMsg": "Your order was not completed. Your cart is still saved.",
+    "viewOrders": "View my orders",
+    "backHome": "Back to home",
+    "backToCart": "Back to cart"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "madeBy": "Handmade in Italy"
+  },
+  "about": {
+    "title": "About Lilymade",
+    "body": "Lilymade is a small Italian studio making crochet bags entirely by hand. Each piece is worked stitch by stitch, inspired by colour, texture and a love of bold, joyful design. Because everything is handmade, most pieces are one-of-a-kind."
+  },
+  "contact": {
+    "title": "Contact",
+    "body": "Questions about a bag, a custom order, or shipping? Reach us by email and we'll get back to you soon.",
+    "email": "Email"
+  },
+  "policies": {
+    "title": "Shipping & Returns",
+    "shippingTitle": "Shipping",
+    "shippingBody": "Orders ship from Italy. Standard shipping is a flat rate, and shipping is free on orders over €100.",
+    "returnsTitle": "Returns",
+    "returnsBody": "As pieces are handmade, please contact us within 14 days of delivery to arrange a return or exchange."
+  }
+}

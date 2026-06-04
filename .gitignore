@@ -1,0 +1,22 @@
+# Secrets / local env
+.env
+*.env
+!.env.prod.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+backend/db.sqlite3
+backend/staticfiles/
+backend/media/
+
+# Node / build
+node_modules/
+frontend/dist/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

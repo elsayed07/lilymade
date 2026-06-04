@@ -1,0 +1,99 @@
+{
+  "brand": "Lilymade",
+  "tagline": "Borse all'uncinetto fatte a mano",
+  "nav": {
+    "home": "Home",
+    "shop": "Negozio",
+    "about": "Chi siamo",
+    "contact": "Contatti",
+    "account": "Account",
+    "cart": "Carrello"
+  },
+  "common": {
+    "loading": "Caricamento…",
+    "error": "Qualcosa è andato storto.",
+    "from": "Da",
+    "addToCart": "Aggiungi al carrello",
+    "soldOut": "Esaurito",
+    "outOfStock": "Non disponibile",
+    "inStock": "Disponibile",
+    "free": "Gratis",
+    "viewAll": "Vedi tutto",
+    "search": "Cerca",
+    "language": "Lingua",
+    "currency": "Valuta"
+  },
+  "home": {
+    "heroTitle": "Borse all'uncinetto, fatte a mano",
+    "heroSubtitle": "Pezzi audaci, materici e unici — realizzati all'uncinetto con coraggio e gioia.",
+    "shopNow": "Scopri la collezione",
+    "featured": "Edizione limitata",
+    "shopByCollection": "Acquista per collezione",
+    "story": "Ogni pezzo Lilymade è realizzato all'uncinetto a mano in Italia. Nessuno è uguale all'altro."
+  },
+  "shop": {
+    "title": "Tutti i prodotti",
+    "empty": "Nessun prodotto trovato.",
+    "searchPlaceholder": "Cerca borse…"
+  },
+  "product": {
+    "selectOption": "Scegli un'opzione",
+    "description": "Descrizione",
+    "added": "Aggiunto al carrello"
+  },
+  "cart": {
+    "title": "Il tuo carrello",
+    "empty": "Il tuo carrello è vuoto.",
+    "emptyCta": "Continua lo shopping",
+    "subtotal": "Subtotale",
+    "shippingNote": "Spedizione calcolata al checkout. Gratis sopra i 100€.",
+    "checkout": "Vai al pagamento",
+    "remove": "Rimuovi",
+    "quantity": "Qtà"
+  },
+  "account": {
+    "title": "Account",
+    "signIn": "Accedi",
+    "createAccount": "Crea account",
+    "email": "Email",
+    "password": "Password",
+    "fullName": "Nome completo",
+    "logout": "Esci",
+    "myOrders": "I miei ordini",
+    "noOrders": "Non hai ancora ordini.",
+    "haveAccount": "Hai già un account? Accedi",
+    "needAccount": "Non hai un account? Registrati",
+    "welcome": "Benvenuto, {{name}}",
+    "orderNumber": "Ordine #{{id}}",
+    "status": "Stato"
+  },
+  "order": {
+    "successTitle": "Grazie per il tuo ordine!",
+    "successMsg": "Il pagamento è andato a buon fine. Una conferma è stata inviata alla tua email.",
+    "cancelTitle": "Pagamento annullato",
+    "cancelMsg": "Il tuo ordine non è stato completato. Il carrello è ancora salvato.",
+    "viewOrders": "Vedi i miei ordini",
+    "backHome": "Torna alla home",
+    "backToCart": "Torna al carrello"
+  },
+  "footer": {
+    "rights": "Tutti i diritti riservati.",
+    "madeBy": "Fatto a mano in Italia"
+  },
+  "about": {
+    "title": "Chi è Lilymade",
+    "body": "Lilymade è un piccolo studio italiano che crea borse all'uncinetto interamente a mano. Ogni pezzo è lavorato punto dopo punto, ispirato dal colore, dalla texture e dall'amore per un design audace e gioioso. Poiché tutto è fatto a mano, la maggior parte dei pezzi è unica."
+  },
+  "contact": {
+    "title": "Contatti",
+    "body": "Domande su una borsa, un ordine personalizzato o la spedizione? Scrivici via email e ti risponderemo presto.",
+    "email": "Email"
+  },
+  "policies": {
+    "title": "Spedizioni e Resi",
+    "shippingTitle": "Spedizione",
+    "shippingBody": "Gli ordini vengono spediti dall'Italia. La spedizione standard ha una tariffa fissa ed è gratuita per ordini superiori a 100€.",
+    "returnsTitle": "Resi",
+    "returnsBody": "Poiché i pezzi sono fatti a mano, contattaci entro 14 giorni dalla consegna per organizzare un reso o un cambio."
+  }
+}
