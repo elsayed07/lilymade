@@ -115,7 +115,4 @@ cp .env.prod.example .env         # then edit values
 docker compose up -d --build
 ```
 
-Point your domain's DNS at the server and set `DOMAIN` in `.env`; Caddy automatically
-provisions and renews a Let's Encrypt certificate, and the site is served over HTTPS.
-Register the Stripe webhook endpoint (`https://<domain>/api/webhooks/stripe/`) in the
-Stripe dashboard so paid orders are fulfilled.
+
