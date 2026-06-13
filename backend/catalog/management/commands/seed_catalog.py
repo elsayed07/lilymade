@@ -7,10 +7,14 @@ exact stock is managed afterwards in the Django admin.
 """
 
 import html
+import os
 import re
 from decimal import Decimal
+from urllib.parse import urlparse
 
 import requests
+from django.core.files.base import ContentFile
+from django.core.files.storage import default_storage
 from django.core.management.base import BaseCommand
 from django.db import transaction
 
@@ -36,6 +40,11 @@ def strip_html(raw):
     text = re.sub(r"<[^>]+>", " ", raw or "")
     text = html.unescape(text)
     return re.sub(r"\s+", " ", text).strip()
+
+
+def slugify_filename(value):
+    value = re.sub(r"[^a-zA-Z0-9._-]+", "-", value or "").strip("-")
+    return value or "image"
 
 
 class Command(BaseCommand):
@@ -65,6 +74,26 @@ class Command(BaseCommand):
             f"{Collection.objects.count()} collections."
         ))
 
+    def _download_image(self, src, dest_dir, base_name):
+        """Download a remote image into local media storage, idempotently.
+
+        Returns the stored relative path, or "" if the download fails (the caller
+        keeps the remote URL as a fallback so seeding never aborts on a bad image).
+        """
+        if not src:
+            return ""
+        ext = os.path.splitext(urlparse(src).path)[1].lower() or ".jpg"
+        name = f"{dest_dir}/{slugify_filename(base_name)}{ext}"
+        if default_storage.exists(name):
+            return name
+        try:
+            resp = requests.get(src, timeout=30)
+            resp.raise_for_status()
+        except requests.RequestException as exc:
+            self.stderr.write(f"    ! failed to download {src}: {exc}")
+            return ""
+        return default_storage.save(name, ContentFile(resp.content))
+
     def _seed_currencies(self):
         for row in CURRENCY_RATES:
             CurrencyRate.objects.update_or_create(
@@ -87,12 +116,17 @@ class Command(BaseCommand):
                 },
             )
             product.images.all().delete()
-            for img in p.get("images", []):
+            for idx, img in enumerate(p.get("images", [])):
+                position = img.get("position", idx)
+                local = self._download_image(
+                    img["src"], "products", f"{product.handle}-{position}"
+                )
                 ProductImage.objects.create(
                     product=product,
+                    image=local,
                     url=img["src"],
                     alt=(img.get("alt") or product.title),
-                    position=img.get("position", 0),
+                    position=position,
                 )
             product.variants.all().delete()
             for v in p.get("variants", []):
@@ -112,12 +146,15 @@ class Command(BaseCommand):
     def _seed_collections(self, store, handle_to_product):
         collections = self._fetch_all(f"{store}/collections.json", "collections")
         for idx, c in enumerate(collections):
+            image_src = (c.get("image") or {}).get("src", "") if c.get("image") else ""
+            local = self._download_image(image_src, "collections", c["handle"])
             collection, _ = Collection.objects.update_or_create(
                 handle=c["handle"],
                 defaults={
                     "title": c["title"],
                     "description": strip_html(c.get("body_html")),
-                    "image": (c.get("image") or {}).get("src", "") if c.get("image") else "",
+                    "image_file": local,
+                    "image": image_src,
                     "position": idx,
                 },
             )
