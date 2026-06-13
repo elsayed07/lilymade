@@ -128,4 +128,7 @@ cp .env.prod.example .env         # then edit values
 docker compose up -d --build
 ```
 
+For a full server-setup → DNS → Stripe → catalog import → Shopify cutover walkthrough,
+see **[DEPLOYMENT.md](DEPLOYMENT.md)**.
+
 
