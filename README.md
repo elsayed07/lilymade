@@ -12,16 +12,29 @@ multi-language and multi-currency support out of the box.
 ## Features
 
 - **Catalog & collections** — products grouped into collections, with per-product
-  image galleries.
+  image galleries. Product images are **self-hosted** (downloaded from Shopify at seed
+  time), so the store has no runtime dependency on Shopify's CDN.
 - **Variants** — color/size variants with independent pricing and inventory.
 - **Cart & checkout** — client-side cart with **Stripe hosted Checkout**; the server
-  re-prices every line item and never trusts client-supplied amounts.
-- **Customer accounts** — registration, login, and order history via JWT auth.
+  re-prices every line item and never trusts client-supplied amounts. Supports
+  **promotion codes** and optional **Stripe Tax**.
+- **Oversell protection** — stock is **reserved inside a row-locked transaction at
+  checkout**, so two buyers can never pay for the same one-of-a-kind item. Unpaid
+  reservations are released when Stripe expires the session (plus a `release_stale_orders`
+  safety-net command).
+- **Transactional email** — order confirmation to the customer, new-order/dispute alerts
+  to the seller, and password-reset emails.
+- **Customer accounts** — registration, login, password reset, and order history via JWT.
+- **Webhooks** — `checkout.session.completed/expired`, `charge.refunded` (auto-restock),
+  and `charge.dispute.created` are all handled idempotently.
 - **Internationalization** — English and Italian storefront UI and product content.
 - **Multi-currency** — prices stored in EUR and converted to USD / GBP / CAD using
   admin-editable exchange rates.
-- **Oversell protection** — inventory is decremented inside an atomic, row-locked
-  transaction so one-of-a-kind items can't be sold twice.
+- **SEO** — per-page meta/OpenGraph tags, product JSON-LD, a generated `sitemap.xml`
+  and `robots.txt`.
+- **Privacy** — GDPR cookie-consent banner; analytics (GA4) load only after consent.
+- **Hardening & ops** — DRF rate limiting on auth/checkout, optional Sentry error
+  monitoring, a backup script, and GitHub Actions CI.
 - **Seller dashboard** — the Django admin manages products, variants, inventory,
   translations, currency rates, and orders.
 

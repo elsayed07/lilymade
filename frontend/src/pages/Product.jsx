@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 
 import { api } from "../api";
+import Seo from "../components/Seo";
 import { useCart } from "../context/CartContext";
 import { useStore } from "../context/StoreContext";
 
@@ -42,6 +43,25 @@ export default function Product() {
     product.variants.length > 1 ||
     (product.variants[0] && product.variants[0].title !== "Default");
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.title,
+    description: product.description || undefined,
+    image: images.map((im) => im.url).filter(Boolean),
+    brand: { "@type": "Brand", name: "Lilymade" },
+    offers: selected
+      ? {
+          "@type": "Offer",
+          price: selected.price,
+          priceCurrency: currency,
+          availability: selected.in_stock
+            ? "https://schema.org/InStock"
+            : "https://schema.org/OutOfStock",
+        }
+      : undefined,
+  };
+
   const onAdd = () => {
     if (!selected || !selected.in_stock) return;
     add({
@@ -58,10 +78,16 @@ export default function Product() {
 
   return (
     <div className="container section product">
+      <Seo
+        title={product.title}
+        description={product.description}
+        image={images[0]?.url || product.featured_image}
+        jsonLd={jsonLd}
+      />
       <div className="product__gallery">
         <div className="product__main-img">
           {images[activeImg] ? (
-            <img src={images[activeImg].url} alt={product.title} />
+            <img src={images[activeImg].url} alt={product.title} decoding="async" />
           ) : (
             <div className="card__placeholder" />
           )}
@@ -74,7 +100,7 @@ export default function Product() {
                 className={i === activeImg ? "active" : ""}
                 onClick={() => setActiveImg(i)}
               >
-                <img src={img.url} alt="" />
+                <img src={img.url} alt="" loading="lazy" decoding="async" />
               </button>
             ))}
           </div>

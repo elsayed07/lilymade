@@ -14,11 +14,13 @@ import Account from "./pages/Account";
 import Cart from "./pages/Cart";
 import CollectionPage from "./pages/CollectionPage";
 import Contact from "./pages/Contact";
+import ForgotPassword from "./pages/ForgotPassword";
 import Home from "./pages/Home";
 import OrderCancel from "./pages/OrderCancel";
 import OrderSuccess from "./pages/OrderSuccess";
 import Policies from "./pages/Policies";
 import Product from "./pages/Product";
+import ResetPassword from "./pages/ResetPassword";
 import Shop from "./pages/Shop";
 
 const router = createBrowserRouter([
@@ -31,6 +33,8 @@ const router = createBrowserRouter([
       { path: "/products/:handle", element: <Product /> },
       { path: "/cart", element: <Cart /> },
       { path: "/account", element: <Account /> },
+      { path: "/forgot-password", element: <ForgotPassword /> },
+      { path: "/reset-password", element: <ResetPassword /> },
       { path: "/order/success", element: <OrderSuccess /> },
       { path: "/order/cancel", element: <OrderCancel /> },
       { path: "/about", element: <About /> },

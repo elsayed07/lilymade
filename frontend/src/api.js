@@ -49,4 +49,9 @@ export const api = {
   refresh: (refresh) => request(`/auth/refresh/`, { method: "POST", body: { refresh } }),
   me: (token) => request(`/auth/me/`, { token }),
   getOrders: (token) => request(`/account/orders/`, { token }),
+  getOrderBySession: (sessionId) => request(`/orders/session/${sessionId}/`),
+  requestPasswordReset: (email) =>
+    request(`/auth/password-reset/`, { method: "POST", body: { email } }),
+  confirmPasswordReset: (data) =>
+    request(`/auth/password-reset-confirm/`, { method: "POST", body: data }),
 };

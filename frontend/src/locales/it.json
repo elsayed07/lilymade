@@ -67,6 +67,24 @@
     "orderNumber": "Ordine #{{id}}",
     "status": "Stato"
   },
+  "auth": {
+    "forgotLink": "Password dimenticata?",
+    "forgotTitle": "Reimposta la password",
+    "forgotSent": "Se l'email esiste, abbiamo inviato un link per il reset. Controlla la posta.",
+    "sendResetLink": "Invia link di reset",
+    "resetTitle": "Imposta una nuova password",
+    "newPassword": "Nuova password",
+    "resetDone": "Password aggiornata — ti reindirizziamo all'accesso…",
+    "resetInvalid": "Questo link di reset non è valido o è scaduto.",
+    "backToSignIn": "Torna all'accesso"
+  },
+  "cookies": {
+    "title": "Cookie",
+    "message": "Usiamo i cookie per gestire il negozio e, con il tuo consenso, per misurare il traffico.",
+    "accept": "Accetta",
+    "reject": "Rifiuta",
+    "learnMore": "Scopri di più"
+  },
   "order": {
     "successTitle": "Grazie per il tuo ordine!",
     "successMsg": "Il pagamento è andato a buon fine. Una conferma è stata inviata alla tua email.",
@@ -94,6 +112,10 @@
     "shippingTitle": "Spedizione",
     "shippingBody": "Gli ordini vengono spediti dall'Italia. La spedizione standard ha una tariffa fissa ed è gratuita per ordini superiori a 100€.",
     "returnsTitle": "Resi",
-    "returnsBody": "Poiché i pezzi sono fatti a mano, contattaci entro 14 giorni dalla consegna per organizzare un reso o un cambio."
+    "returnsBody": "Poiché i pezzi sono fatti a mano, contattaci entro 14 giorni dalla consegna per organizzare un reso o un cambio.",
+    "privacyTitle": "Privacy",
+    "privacyBody": "Trattiamo il tuo nome e i dati di contatto e spedizione solo per evadere l'ordine; il pagamento è gestito in modo sicuro da Stripe — non vediamo mai il numero della tua carta. Puoi chiederci di accedere o cancellare i tuoi dati in qualsiasi momento via email.",
+    "cookiesTitle": "Cookie",
+    "cookiesBody": "Usiamo cookie essenziali per far funzionare il negozio (carrello e accesso). I cookie di analisi vengono usati solo se li accetti nel banner, e puoi cambiare scelta cancellando i dati del sito dal browser."
   }
 }

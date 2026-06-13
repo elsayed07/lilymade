@@ -67,6 +67,24 @@
     "orderNumber": "Order #{{id}}",
     "status": "Status"
   },
+  "auth": {
+    "forgotLink": "Forgot your password?",
+    "forgotTitle": "Reset your password",
+    "forgotSent": "If that email exists, we've sent a reset link. Check your inbox.",
+    "sendResetLink": "Send reset link",
+    "resetTitle": "Set a new password",
+    "newPassword": "New password",
+    "resetDone": "Password updated — redirecting you to sign in…",
+    "resetInvalid": "This reset link is invalid or has expired.",
+    "backToSignIn": "Back to sign in"
+  },
+  "cookies": {
+    "title": "Cookies",
+    "message": "We use cookies to run the store and, with your consent, to measure traffic.",
+    "accept": "Accept",
+    "reject": "Reject",
+    "learnMore": "Learn more"
+  },
   "order": {
     "successTitle": "Thank you for your order!",
     "successMsg": "Your payment was successful. A confirmation has been sent to your email.",
@@ -94,6 +112,10 @@
     "shippingTitle": "Shipping",
     "shippingBody": "Orders ship from Italy. Standard shipping is a flat rate, and shipping is free on orders over €100.",
     "returnsTitle": "Returns",
-    "returnsBody": "As pieces are handmade, please contact us within 14 days of delivery to arrange a return or exchange."
+    "returnsBody": "As pieces are handmade, please contact us within 14 days of delivery to arrange a return or exchange.",
+    "privacyTitle": "Privacy",
+    "privacyBody": "We process your name, contact and shipping details only to fulfil your order, and payment is handled securely by Stripe — we never see your card number. You can ask us to access or delete your data at any time by email.",
+    "cookiesTitle": "Cookies",
+    "cookiesBody": "We use essential cookies to run the store (cart and sign-in). Analytics cookies are used only if you accept them in the cookie banner, and you can change your choice by clearing your browser's site data."
   }
 }
