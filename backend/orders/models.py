@@ -8,6 +8,7 @@ class Order(models.Model):
         ("paid", "Paid"),
         ("fulfilled", "Fulfilled"),
         ("cancelled", "Cancelled"),
+        ("refunded", "Refunded"),
     ]
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,

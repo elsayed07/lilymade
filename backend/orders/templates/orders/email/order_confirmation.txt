@@ -1,0 +1,14 @@
+Thank you for your order!
+
+Order #{{ order.pk }}
+{% for item in items %}- {{ item.product_title }} – {{ item.variant_title }} x{{ item.quantity }}  ({{ item.currency }} {{ item.unit_price }})
+{% endfor %}
+Subtotal: {{ order.currency }} {{ order.subtotal }}
+Shipping: {{ order.currency }} {{ order.shipping }}
+Total:    {{ order.currency }} {{ order.total }}
+
+We'll let you know as soon as your handmade piece is on its way.
+You can view your orders any time at {{ site }}/account
+
+With love,
+Lilymade — handmade in Italy
