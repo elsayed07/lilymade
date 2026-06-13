@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import { api } from "../api";
 import ProductCard from "../components/ProductCard";
+import Seo from "../components/Seo";
 import { useStore } from "../context/StoreContext";
 
 export default function Shop() {
@@ -29,6 +30,7 @@ export default function Shop() {
 
   return (
     <div className="container section">
+      <Seo title={t("shop.title")} description={t("home.heroSubtitle")} />
       <h1 className="section__title">{t("shop.title")}</h1>
       <input
         className="search"
