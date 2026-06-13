@@ -4,6 +4,14 @@ from .models import Collection, Product, ProductImage, ProductVariant
 from .pricing import convert_from_eur
 
 
+def image_url(file_field, fallback, request):
+    """Absolute URL of a self-hosted image, falling back to a stored remote URL."""
+    if file_field:
+        url = file_field.url
+        return request.build_absolute_uri(url) if request is not None else url
+    return fallback or None
+
+
 class VariantSerializer(serializers.ModelSerializer):
     price = serializers.SerializerMethodField()
     currency = serializers.SerializerMethodField()
@@ -24,9 +32,14 @@ class VariantSerializer(serializers.ModelSerializer):
 
 
 class ImageSerializer(serializers.ModelSerializer):
+    url = serializers.SerializerMethodField()
+
     class Meta:
         model = ProductImage
         fields = ("url", "alt", "position")
+
+    def get_url(self, obj):
+        return image_url(obj.image, obj.url, self.context.get("request"))
 
 
 class ProductListSerializer(serializers.ModelSerializer):
@@ -53,7 +66,9 @@ class ProductListSerializer(serializers.ModelSerializer):
 
     def get_featured_image(self, obj):
         image = obj.images.all().first()
-        return image.url if image else None
+        if not image:
+            return None
+        return image_url(image.image, image.url, self.context.get("request"))
 
     def get_in_stock(self, obj):
         return any(v.inventory_quantity > 0 for v in obj.variants.all())
@@ -77,6 +92,7 @@ class ProductDetailSerializer(ProductListSerializer):
 
 class CollectionSerializer(serializers.ModelSerializer):
     products_count = serializers.SerializerMethodField()
+    image = serializers.SerializerMethodField()
 
     class Meta:
         model = Collection
@@ -84,6 +100,9 @@ class CollectionSerializer(serializers.ModelSerializer):
 
     def get_products_count(self, obj):
         return obj.products.filter(status="active").count()
+
+    def get_image(self, obj):
+        return image_url(obj.image_file, obj.image, self.context.get("request"))
 
 
 class CollectionDetailSerializer(CollectionSerializer):
