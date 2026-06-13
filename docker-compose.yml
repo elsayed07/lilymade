@@ -31,6 +31,7 @@ services:
       context: ./frontend
       args:
         VITE_API_URL: /api
+        VITE_GA_ID: ${VITE_GA_ID:-}
     restart: unless-stopped
     volumes:
       # Same volume Django writes uploads to; nginx serves /media/ from here (read-only).

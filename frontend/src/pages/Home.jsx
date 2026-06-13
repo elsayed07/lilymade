@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import { api } from "../api";
 import ProductCard from "../components/ProductCard";
+import Seo from "../components/Seo";
 import { useStore } from "../context/StoreContext";
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
 
   return (
     <>
+      <Seo title={t("home.heroTitle")} description={t("home.heroSubtitle")} />
       <section className="hero">
         <div className="container hero__inner">
           <p className="hero__eyebrow">{t("tagline")}</p>
