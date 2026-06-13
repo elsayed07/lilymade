@@ -9,6 +9,25 @@ multi-language and multi-currency support out of the box.
 
 ---
 
+## Screenshots
+
+The storefront — a handcrafted-bag catalog, product pages with colour variants, and a
+Stripe-backed cart — in English & Italian, EUR / USD / GBP / CAD.
+
+<p align="center">
+  <img src="docs/screenshots/shop.png" alt="Lilymade — shop catalog" width="100%">
+</p>
+
+| Home | Product page |
+| :---: | :---: |
+| <img src="docs/screenshots/home.png" alt="Home page" width="420"> | <img src="docs/screenshots/product.png" alt="Product page with colour variants" width="420"> |
+
+| Cart & checkout | Mobile |
+| :---: | :---: |
+| <img src="docs/screenshots/cart.png" alt="Cart" width="420"> | <img src="docs/screenshots/mobile-home.png" alt="Mobile home" width="200"> |
+
+---
+
 ## Features
 
 - **Catalog & collections** — products grouped into collections, with per-product
