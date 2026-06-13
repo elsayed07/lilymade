@@ -6,6 +6,9 @@ class Collection(models.Model):
     handle = models.SlugField(max_length=120, unique=True)
     title = models.CharField(max_length=200)
     description = models.TextField(blank=True)
+    # Self-hosted image (preferred). `image` keeps the original remote URL as a fallback
+    # for rows imported before images were downloaded locally.
+    image_file = models.ImageField(upload_to="collections/", blank=True)
     image = models.URLField(blank=True)
     position = models.PositiveIntegerField(default=0)
 
@@ -40,7 +43,10 @@ class Product(models.Model):
 
 class ProductImage(models.Model):
     product = models.ForeignKey(Product, related_name="images", on_delete=models.CASCADE)
-    url = models.URLField(max_length=500)
+    # Self-hosted image (preferred). `url` keeps the original remote URL as a fallback
+    # for rows imported before images were downloaded locally.
+    image = models.ImageField(upload_to="products/", blank=True)
+    url = models.URLField(max_length=500, blank=True)
     alt = models.CharField(max_length=200, blank=True)
     position = models.PositiveIntegerField(default=0)
 
