@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 
+import CookieConsent from "./CookieConsent";
 import Footer from "./Footer";
 import Header from "./Header";
 
@@ -11,6 +12,7 @@ export default function Layout() {
         <Outlet />
       </main>
       <Footer />
+      <CookieConsent />
     </>
   );
 }

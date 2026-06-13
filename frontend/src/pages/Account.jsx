@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 import { api } from "../api";
 import { useAuth } from "../context/AuthContext";
@@ -111,6 +112,11 @@ export default function Account() {
           {mode === "login" ? t("account.signIn") : t("account.createAccount")}
         </button>
       </form>
+      {mode === "login" && (
+        <Link className="text-link" to="/forgot-password">
+          {t("auth.forgotLink")}
+        </Link>
+      )}
       <button
         className="text-link"
         onClick={() => {

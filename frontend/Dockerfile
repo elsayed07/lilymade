@@ -6,6 +6,8 @@ RUN npm ci
 COPY . .
 ARG VITE_API_URL=/api
 ENV VITE_API_URL=$VITE_API_URL
+ARG VITE_GA_ID=
+ENV VITE_GA_ID=$VITE_GA_ID
 RUN npm run build
 
 # Serve with nginx

@@ -1,0 +1,12 @@
+New order #{{ order.pk }}
+
+Customer: {{ order.email }}
+Total:    {{ order.currency }} {{ order.total }} (subtotal {{ order.subtotal }}, shipping {{ order.shipping }})
+
+Items:
+{% for item in items %}- {{ item.product_title }} – {{ item.variant_title }} x{{ item.quantity }}
+{% endfor %}
+Ship to:
+{{ order.shipping_address }}
+
+Manage this order in the Django admin: {{ site }}/admin/orders/order/{{ order.pk }}/change/
