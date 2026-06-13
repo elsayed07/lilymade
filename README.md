@@ -9,10 +9,14 @@ multi-language and multi-currency support out of the box.
 
 ---
 
-## Screenshots
+## Demo & screenshots
 
-The storefront — a handcrafted-bag catalog, product pages with colour variants, and a
-Stripe-backed cart — in English & Italian, EUR / USD / GBP / CAD.
+A walkthrough of the storefront — browsing the catalog, choosing a colour variant, adding
+to the cart — in English & Italian, EUR / USD / GBP / CAD.
+
+<p align="center">
+  <img src="docs/screenshots/demo.gif" alt="Lilymade storefront walkthrough" width="100%">
+</p>
 
 <p align="center">
   <img src="docs/screenshots/shop.png" alt="Lilymade — shop catalog" width="100%">
