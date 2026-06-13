@@ -32,6 +32,9 @@ services:
       args:
         VITE_API_URL: /api
     restart: unless-stopped
+    volumes:
+      # Same volume Django writes uploads to; nginx serves /media/ from here (read-only).
+      - media:/var/www/media:ro
     depends_on:
       - backend
 
